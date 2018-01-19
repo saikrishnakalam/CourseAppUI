@@ -1,0 +1,30 @@
+<form>
+  <div class="form-group">
+    <label for="Name">Name:</label>
+      <input type="text" class="form-control" name="Name" [ngModel]="course.Name"
+      (ngModelChange)="course.Name=$event">
+  </div>
+
+  <div class="form-group">
+      <label for="Duration">Select Duration:</label>
+      <select class="form-control" id="Duration"[(ngModel)]="course.duration" name="duration">
+        <option>2Months</option>
+        <option>3months</option>
+        <option>5Months</option>
+        <option>Crash Course(41Days)</option>
+      </select>
+    </div>
+  <b>Skillevel:</b>
+
+      <label class="radio-inline" *ngFor="let skillevel of getKeys()">
+        <input type="radio" name="skillevel" [ngModel]="course.skillevel"
+         (ngModelChange)="course.skillevel=skillevel" [value]="skillevel">{{skillevel}}</label>
+
+  <div class="form-group">
+      <label for="price">price:
+      <input type="text" class="form-control" name="price" [(ngModel)]="course.price"></label>
+  </div>
+
+  <button class="btn btn-danger" type="button"(click)="onSubmit()">Submit</button>
+
+</form>

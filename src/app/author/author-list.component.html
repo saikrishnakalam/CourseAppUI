@@ -1,0 +1,17 @@
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+   <th>Full Name</th>
+   <th> Age </th>
+   <th> Gender </th>
+  </tr>
+  <tbody>
+    <tr *ngFor = "let aut of authorArray">
+      <td>{{aut.Id}}</td>
+      <td>{{aut.fName+" "+aut.mName+" "+aut.lName}} </td>
+      <td>{{aut.age}}</td>
+      <td>{{aut.gender}}</td>
+     </tr>
+     </tbody>
+     </table>
